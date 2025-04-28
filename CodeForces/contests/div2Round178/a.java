@@ -1,37 +1,24 @@
 import java.util.Scanner;
-import java.util.Stack;
-
-
+ 
+// Constest : https://codeforces.com/contest/2104
 
 public class a {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
-            int size = sc.nextInt();
-            int[] tab = new int[size];
-            for (int j = 0; j < size; j++) {
-                tab[j] = sc.nextInt();
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            int min = Math.min(a, b);
+            int max = Math.max(a, b);
+            boolean result = ((c-(max-min)-max)%3 == 0 )&&c-(max-min)>=max ;
+            if (result) {
+                System.out.println("YES");
             }
-
-            Stack<Integer> temp = new Stack<>();
-            temp.push(tab[0]);
-            temp.push(tab[0]);
-            for (int j = 1; j < size-1; j++){
-                if (tab[j] > temp.peek()) {
-                    temp.push(tab[j]);
-                }
-                else {
-                    temp.push(temp.peek());
-                }
+            else {
+                System.out.println("NO");
             }
-            long sum = 0;
-            for (int j = size-1; j > -1; j--){
-                sum = sum + tab[j];
-                long sum2 = sum - tab[j] + temp.pop();
-                System.out.print(Math.max(sum,sum2) + " ");
-            }
-            System.out.println();
         }
         sc.close();
     }
