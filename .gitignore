@@ -1,1 +1,9 @@
-CodeForces/problems/arrayAndGcd
+# Ignore everything by default
+*
+
+# Allow directories so Git can track files inside them
+# The slash '/' at the end is important to match only directories.
+!*/
+
+# Explicitly allow C++ source files (.cpp)
+!*.cpp
