@@ -27,6 +27,15 @@ template <typename T>
 bool chmax(T &a, const T &b) { if (a < b) { a = b; return true; } return false; }
 template <typename T>
 bool chmin(T &a, const T &b) { if (b < a) { a = b; return true; } return false; }
+template <typename T> T mod(T x, T n) { return ((x % n) + n) % n; }
+template <typename T> void print_arr(const vector<T> &arr) {
+    for (size_t i = 0; i < arr.size(); ++i) {
+        cout << arr[i];
+        if (i + 1 < arr.size())
+            cout << " ";
+    }
+    cout << endl;
+}
 
 #ifdef LOCAL
 #define dbg(x) cerr << #x << " = " << (x) << endl;
