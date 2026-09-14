@@ -15,8 +15,8 @@ const int MOD = 1e9 + 7;
 const int INF = 1e9;
 const ll LINF = 1e18;
 
-template <typename T>
-void print_arr(const vector<T> &arr);
+template <typename T> void print_arr(const vector<T> &arr);
+template <typename T> T mod(T x, T n);
 
 void solve() {
     ll n;
@@ -25,7 +25,6 @@ void solve() {
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-
 }
 
 int main() {
@@ -41,11 +40,12 @@ int main() {
     return 0;
 }
 
-template <typename T>
-void print_arr(const vector<T> &arr) {
+template <typename T> void print_arr(const vector<T> &arr) {
     for (size_t i = 0; i < arr.size(); ++i) {
         cout << arr[i];
-        if (i + 1 < arr.size()) cout << " ";
+        if (i + 1 < arr.size())
+            cout << " ";
     }
     cout << endl;
 }
+template <typename T> T mod(T x, T n) { return ((x % n) + n) % n; }
